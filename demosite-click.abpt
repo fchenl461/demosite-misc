@@ -1,0 +1,534 @@
+{"blueprint": {
+    "reportDuration": 2000,
+    "templates": [{
+        "stateId": 2138583790,
+        "orders": [{
+            "start": true,
+            "order": [{
+                "oncePerApp": "false",
+                "name": "cartButton('cart-info empty')",
+                "smartTagName": "cartButton",
+                "action": "click",
+                "type": "Action",
+                "value": "click",
+                "elementType": "smartTag"
+            }]
+        }]
+    }],
+    "maxBrowsers": 15,
+    "ignoreURLs": [],
+    "version": 300,
+    "visualHints": true,
+    "url": "https://demosite.appvance.com/",
+    "executionName": "a",
+    "uniqueDS": false,
+    "stLibraryId": 0,
+    "baseURL": "https://demosite.appvance.com",
+    "blueprintType": "web",
+    "delay": 10,
+    "dataSetNames": [{
+        "values": {"baseURL": "https://demosite.appvance.com"},
+        "name": "Default",
+        "used": true
+    }],
+    "browser": "Chrome",
+    "usePreviousBindings": false,
+    "setupJS": "",
+    "files": [],
+    "scanType": ["Smarttags"],
+    "dplType": "HashDPL",
+    "selfHealing": false,
+    "validDomains": ["https://demosite.appvance.com"],
+    "reportStatusCode": 400,
+    "stLibraries": [{
+        "customTags": [],
+        "extractors": [
+            {
+                "name": "textPreExtractor",
+                "variable": "preText",
+                "disabled": false,
+                "type": "text",
+                "when": "preAction"
+            },
+            {
+                "name": "textPostExtractor",
+                "variable": "postText",
+                "disabled": false,
+                "type": "text",
+                "when": "postAction"
+            }
+        ],
+        "validators": [
+            {
+                "name": "greaterOrEqualThanOneValidator",
+                "disabled": false,
+                "type": "text",
+                "when": "postAction",
+                "operator": "greaterOrEqual",
+                "target": "1"
+            },
+            {
+                "name": "containsAtSignValidator",
+                "disabled": false,
+                "type": "text",
+                "when": "postAction",
+                "operator": "contains",
+                "target": "\"@\""
+            }
+        ],
+        "threshold": 0.75,
+        "actions": [],
+        "smartTags": [
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "addToCartButton",
+                "disabled": false,
+                "rules": [{
+                    "weight": 100,
+                    "type": "attrContainsValue",
+                    "value": "id:add-to-cart-button"
+                }],
+                "type": "Action",
+                "tags": ["button"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "cardCodeText",
+                "disabled": false,
+                "rules": [{
+                    "weight": 100,
+                    "type": "attrContainsValue",
+                    "value": "id:card_code"
+                }],
+                "type": "Text",
+                "tags": ["input"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "checkOutButton",
+                "disabled": false,
+                "rules": [{
+                    "weight": 100,
+                    "type": "attrContainsValue",
+                    "value": "id:checkout-link"
+                }],
+                "type": "Action",
+                "tags": ["button"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "searchButton",
+                "disabled": false,
+                "rules": [
+                    {
+                        "weight": 100,
+                        "type": "attrContainsValue",
+                        "value": "class:btn-success"
+                    },
+                    {
+                        "weight": 100,
+                        "type": "attrContainsValue",
+                        "value": "value:Search"
+                    },
+                    {
+                        "weight": 100,
+                        "type": "attrContainsValue",
+                        "value": "type:submit"
+                    }
+                ],
+                "type": "Action",
+                "tags": ["input"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "passwordText",
+                "disabled": false,
+                "rules": [{
+                    "weight": 100,
+                    "type": "attrContainsValue",
+                    "value": "id:spree_user_password"
+                }],
+                "type": "Text",
+                "tags": ["input"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "cartButton",
+                "disabled": false,
+                "rules": [{
+                    "weight": 100,
+                    "type": "attrContainsValue",
+                    "value": "class:cart-info"
+                }],
+                "type": "Action",
+                "tags": ["a"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "billingAddressText",
+                "disabled": false,
+                "rules": [
+                    {
+                        "weight": 100,
+                        "type": "attrContainsValue",
+                        "value": "id:order_bill_address_attributes"
+                    },
+                    {
+                        "weight": 100,
+                        "type": "attrContainsValue",
+                        "value": "class:form-control"
+                    }
+                ],
+                "type": "Text",
+                "tags": ["input"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": ["containsAtSignValidator"],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "emailText",
+                "disabled": false,
+                "rules": [{
+                    "weight": 100,
+                    "type": "attrContainsValue",
+                    "value": "id:spree_user_email"
+                }],
+                "type": "Text",
+                "tags": ["input"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "cardNumberText",
+                "disabled": false,
+                "rules": [{
+                    "weight": 100,
+                    "type": "attrContainsValue",
+                    "value": "id:card_number"
+                }],
+                "type": "Text",
+                "tags": ["input"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "placeOrderButton",
+                "disabled": false,
+                "rules": [
+                    {
+                        "weight": 100,
+                        "type": "attrContainsValue",
+                        "value": "value:Place Order"
+                    },
+                    {
+                        "weight": 100,
+                        "type": "attrContainsValue",
+                        "value": "type:submit"
+                    }
+                ],
+                "type": "Action",
+                "tags": ["input"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "cardExpirationText",
+                "disabled": false,
+                "rules": [{
+                    "weight": 100,
+                    "type": "attrContainsValue",
+                    "value": "id:card_expiry"
+                }],
+                "type": "Text",
+                "tags": ["input"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "continueButton",
+                "disabled": false,
+                "rules": [
+                    {
+                        "weight": 100,
+                        "type": "attrContainsValue",
+                        "value": "value:Continue"
+                    },
+                    {
+                        "weight": 100,
+                        "type": "attrContainsValue",
+                        "value": "type:submit"
+                    }
+                ],
+                "type": "Action",
+                "tags": ["input"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": true,
+                "name": "homeButton",
+                "disabled": false,
+                "rules": [{
+                    "weight": 100,
+                    "type": "attrContainsValue",
+                    "value": "id:home-link"
+                }],
+                "type": "Navigation",
+                "tags": ["li"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "dropDownSelect",
+                "disabled": false,
+                "rules": [{
+                    "weight": 100,
+                    "type": "attrContainsValue",
+                    "value": "id:taxon"
+                }],
+                "type": "Select",
+                "tags": ["select"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": true,
+                "name": "sideMenuLink",
+                "disabled": false,
+                "rules": [{
+                    "weight": 100,
+                    "type": "attrContainsValue",
+                    "value": "class:list-group-item"
+                }],
+                "type": "Navigation",
+                "tags": ["a"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "loginButton",
+                "disabled": false,
+                "rules": [
+                    {
+                        "weight": 100,
+                        "type": "attrContainsValue",
+                        "value": "class:btn btn-lg btn-success btn-block"
+                    },
+                    {
+                        "weight": 100,
+                        "type": "attrContainsValue",
+                        "value": "value:Login"
+                    }
+                ],
+                "type": "Action",
+                "tags": ["input"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "searchBoxText",
+                "disabled": false,
+                "rules": [{
+                    "weight": 100,
+                    "type": "attrContainsValue",
+                    "value": "id:keywords"
+                }],
+                "type": "Text",
+                "tags": ["input"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "nameOnCardText",
+                "disabled": false,
+                "rules": [{
+                    "weight": 100,
+                    "type": "attrContainsValue",
+                    "value": "id:name_on_card_2"
+                }],
+                "type": "Text",
+                "tags": ["input"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": true,
+                "extractors": ["textPreExtractor"],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "productLink",
+                "disabled": false,
+                "rules": [
+                    {
+                        "weight": 100,
+                        "type": "attrContainsValue",
+                        "value": "itemprop:name"
+                    },
+                    {
+                        "weight": 100,
+                        "type": "attrContainsValue",
+                        "value": "class:info"
+                    }
+                ],
+                "type": "Navigation",
+                "tags": ["span"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": [],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "billingAddressSelect",
+                "disabled": false,
+                "rules": [
+                    {
+                        "weight": 100,
+                        "type": "attrContainsValue",
+                        "value": "id:order_bill_address_attributes"
+                    },
+                    {
+                        "weight": 100,
+                        "type": "attrContainsValue",
+                        "value": "class:form-control"
+                    }
+                ],
+                "type": "Select",
+                "tags": ["select"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": [],
+                "validators": ["greaterOrEqualThanOneValidator"],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "quantityText",
+                "disabled": false,
+                "rules": [{
+                    "weight": 100,
+                    "type": "attrContainsValue",
+                    "value": "id:quantity"
+                }],
+                "type": "Text",
+                "tags": ["input"],
+                "info": {}
+            },
+            {
+                "singleton": false,
+                "scanOnePerPage": false,
+                "extractors": ["textPostExtractor"],
+                "validators": ["containsAtSignValidator"],
+                "methods": {},
+                "scanOncePerApp": false,
+                "name": "guestEmailText",
+                "disabled": false,
+                "rules": [{
+                    "weight": 100,
+                    "type": "attrContainsValue",
+                    "value": "id:order_email"
+                }],
+                "type": "Text",
+                "tags": ["input"],
+                "info": {}
+            }
+        ]
+    }]
+}}
