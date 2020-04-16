@@ -1,20 +1,37 @@
 {"blueprint": {
     "reportDuration": 2000,
-    "templates": [{
-        "stateId": 2138583790,
-        "orders": [{
-            "start": true,
-            "order": [{
-                "oncePerApp": "false",
-                "name": "cartButton('cart-info empty')",
-                "smartTagName": "cartButton",
-                "action": "click",
-                "type": "Action",
-                "value": "click",
-                "elementType": "smartTag"
+    "templates": [
+        {
+            "stateId": 2138583790,
+            "orders": [{
+                "start": true,
+                "order": [{
+                    "oncePerApp": "false",
+                    "name": "cartButton('cart-info empty')",
+                    "smartTagName": "cartButton",
+                    "action": "click",
+                    "type": "Action",
+                    "value": "click",
+                    "elementType": "smartTag"
+                }]
             }]
-        }]
-    }],
+        },
+        {
+            "stateId": -248000657,
+            "orders": [{
+                "start": true,
+                "order": [{
+                    "oncePerApp": "false",
+                    "name": "addToCartButton('add-to-cart-button')",
+                    "smartTagName": "addToCartButton",
+                    "action": "click",
+                    "type": "Action",
+                    "value": "click",
+                    "elementType": "smartTag"
+                }]
+            }]
+        }
+    ],
     "maxBrowsers": 15,
     "ignoreURLs": [],
     "version": 300,
