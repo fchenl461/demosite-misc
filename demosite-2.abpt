@@ -3,18 +3,56 @@
     "templates": [
         {
             "stateId": 2138583790,
-            "orders": [{
-                "start": true,
-                "order": [{
-                    "oncePerApp": "false",
-                    "name": "cartButton('cart-info empty')",
-                    "smartTagName": "cartButton",
-                    "action": "click",
-                    "type": "Action",
-                    "value": "click",
-                    "elementType": "smartTag"
-                }]
-            }]
+            "orders": [
+                {
+                    "start": true,
+                    "order": [{
+                        "oncePerApp": "false",
+                        "name": "cartButton('cart-info empty')",
+                        "smartTagName": "cartButton",
+                        "action": "click",
+                        "type": "Action",
+                        "value": "click",
+                        "elementType": "smartTag"
+                    }]
+                },
+                {
+                    "start": true,
+                    "order": [
+                        {
+                            "oncePerApp": "false",
+                            "values": [
+                                "\"\"",
+                                "\"1\"",
+                                "\"2\""
+                            ],
+                            "name": "dropDownSelect('taxon')",
+                            "smartTagName": "dropDownSelect",
+                            "action": "tryall",
+                            "type": "Select",
+                            "elementType": "smartTag"
+                        },
+                        {
+                            "oncePerApp": "false",
+                            "name": "searchBoxText('keywords')",
+                            "smartTagName": "searchBoxText",
+                            "action": "setValue",
+                            "type": "Text",
+                            "value": "$search",
+                            "elementType": "smartTag"
+                        },
+                        {
+                            "oncePerApp": "false",
+                            "name": "searchButton('Search')",
+                            "smartTagName": "searchButton",
+                            "action": "click",
+                            "type": "Action",
+                            "value": "click",
+                            "elementType": "smartTag"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "stateId": -248000657,
@@ -44,9 +82,12 @@
     "blueprintType": "web",
     "delay": 10,
     "dataSetNames": [{
-        "values": {"baseURL": "https://demosite.appvance.com"},
+        "values": {
+            "baseURL": "https://demosite.appvance.com",
+            "search": "phone"
+        },
         "name": "Default",
-        "used": true
+        "used": false
     }],
     "browser": "Chrome",
     "usePreviousBindings": false,
